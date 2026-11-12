@@ -1,12 +1,12 @@
 HC-SR04 Distance Alarm 🚨
 
-📌 Project Overview
+Project Overview
 
-An Arduino-based ultrasonic distance alarm system that measures the distance between objects using the HC-SR04 ultrasonic sensor.
+An Arduino-based ultrasonic distance alarm system that detects nearby objects using the HC-SR04 ultrasonic sensor.
 
-The system features three alert levels, providing different audible warnings depending on the measured distance.
+The system provides three warning levels based on the measured distance, using different buzzer frequencies and alert patterns. A red LED activates at the critical distance level.
 
-🛠️ Components
+Components
 
 - Arduino Uno
 - HC-SR04 Ultrasonic Sensor
@@ -14,47 +14,43 @@ The system features three alert levels, providing different audible warnings dep
 - Red LED
 - 220Ω Resistor
 
-🚨 Alert Levels
+Alert Levels
 
-The system operates using three warning levels:
+Zone| Distance| Buzzer Frequency| Alert Pattern| LED
+Safe Zone| > 30 cm| OFF| No Alert| OFF
+Level 1| > 15 cm and ≤ 30 cm| 1000 Hz| 400ms ON / 400ms OFF| OFF
+Level 2| > 5 cm and ≤ 15 cm| 1500 Hz| 100ms ON / 100ms OFF| OFF
+Level 3| ≤ 5 cm| 2000 Hz| Continuous| ON
 
-Level| Distance| Alert Behavior
-🟢 Safe Zone| More than 30 cm| No sound or LED
-🟡 Level 1| 15–30 cm| Slow intermittent beep (1000 Hz)
-🟠 Level 2| 5–15 cm| Fast intermittent beep (1500 Hz)
-🔴 Level 3| 5 cm or less| Continuous alarm (2000 Hz) and red LED ON
+How It Works
 
-Alert Timing
+1. The HC-SR04 sensor sends ultrasonic pulses.
+2. The Arduino measures the echo duration.
+3. The distance is calculated in centimeters.
+4. The system selects the appropriate warning level.
+5. The buzzer and LED respond according to the detected distance.
 
-- Level 1: 400 ms ON / 400 ms OFF.
-- Level 2: 100 ms ON / 100 ms OFF.
-- Level 3: Continuous buzzer sound.
-
-⚙️ Technologies
+Technologies
 
 - Arduino Uno
-- C / C++
+- C/C++
 - Ultrasonic Distance Measurement
-- Wokwi Simulator
+- Embedded Systems
+- Wokwi Simulation
 
-📂 Project Files
+Project Files
 
-- Arduino source code (.ino)
-- Circuit configuration (diagram.json)
-- Wokwi project information
+- "sketch.ino" – Arduino source code.
+- "diagram.json" – Circuit configuration.
 
-🔗 Simulation
+Simulation
 
-"View Project on Wokwi" (https://wokwi.com/projects/480396076951122945)
+"Run the project on Wokwi" (https://wokwi.com/projects/480396076951122945)
 
-🎯 Project Goals
+Project Objective
 
-- Understand ultrasonic distance measurement.
-- Implement a three-level warning system.
-- Practice Arduino programming.
-- Work with electronic sensors and output devices.
+To practice embedded programming, ultrasonic sensing, distance measurement, and multi-level electronic alert systems.
 
 ---
 
 Developed by Saher Morad
-Learning, Building, and Improving.
